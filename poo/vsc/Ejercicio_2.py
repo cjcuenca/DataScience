@@ -149,11 +149,12 @@ class Cuenta_Joven(Cuenta):
     def mostrar(self):
         return f"Cuenta Joven Titular {self.titular}, cantidad: {self.saldo}, edad {self.edad}  y bonificación {self.bonificacion} "
 
-    # def retirar(self, cantidad):
+    # def retirar(self, importe):
     #     if not self.esTitularValido():
     #         print("No puedes retirar el importe")
-    #     elif cantidad > 0:
-    #         super().retirar(cantidad)
+    #     elif importe > 0:
+    #         super().retirar(importe)
+    #         print(f"Restirando efectivo {importe} ")
 
     def retirar_cuentajoven(self, importe):
         if not self.esTitularValido():
