@@ -18,28 +18,23 @@ class Persona:
                 f"DNI : {self.DNI}"
 
     def esMayorDeEdad(self):
-        if self.edad < 18:
-            esMayorDeEdad = False
-            return esMayorDeEdad
-        else:
-            esMayorDeEdad = True
-            return esMayorDeEdad
-"""
-persona1 = Persona("Carlos", 1, "50000000A")
-persona2 = Persona("Maria", 18, "50000000A")
+        return self.edad >= 18
 
-print(persona1.mostrar())
+# persona1 = Persona("Carlos", 1, "50000000A")
+# persona2 = Persona("Maria", 18, "50000000A")
 
-if persona2.esMayorDeEdad():
-    print(f"El cliente {persona2.nombre} es mayor de edad ")
-else:
-    print(f"El cliente {persona2.nombre} es menor de edad ")
+# print(persona1.mostrar())
 
-if persona1.esMayorDeEdad():
-    print(f"El cliente {persona1.nombre} es mayor de edad ")
-else:
-    print(f"El cliente {persona1.nombre} es menor de edad ")
-"""
+# if persona2.esMayorDeEdad():
+#     print(f"El cliente {persona2.nombre} es mayor de edad ")
+# else:
+#     print(f"El cliente {persona2.nombre} es menor de edad ")
+
+# if persona1.esMayorDeEdad():
+#     print(f"El cliente {persona1.nombre} es mayor de edad ")
+# else:
+#     print(f"El cliente {persona1.nombre} es menor de edad ")
+
 
 # EJERCICIO 2
 """
@@ -164,13 +159,13 @@ class Cuenta_Joven(Cuenta):
 
 titular2 = Cuenta_Joven("Pedro", 30)
 titular3 = Cuenta_Joven("Lorena", 20, 200, 5)
+titular4 = Cuenta_Joven("Jaume", 24, 100, 5)
+
 
 #print(titular3.mostrar())
 
 
 # 1) Mayor de edad
-
-
 
 #persona1 = Persona("Carlos", 19, "50000000A")
 # if titular3.esMayorDeEdad:
@@ -188,8 +183,6 @@ titular3 = Cuenta_Joven("Lorena", 20, 200, 5)
 #     print("NO Es mayor de edad")
 
 # Comprobar si el  cliente  es un titular válido para la Cuenta Joven
-
-titular4 = Cuenta_Joven("Jaume", 24, 100, 5)
 
 # if titular4.esTitularValido():
 #    print("Es un titular válido")
