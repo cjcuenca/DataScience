@@ -10,6 +10,7 @@ class Persona:
         self.edad = edad
     def cumple(self):
         self.edad = self.edad + 1
+        return self.edad
 
 # Per1=Persona("Pepe", 25)
 # Per1.cumple()
@@ -31,6 +32,7 @@ class Persona:
 
     def cumple(self):
         self.edad = self.edad + 1
+        return self.edad
 
 # Persona1=Persona("Pepe", 25)
 
@@ -57,17 +59,18 @@ class Persona:
 
     def cumple(self):
         self.edad = self.edad + 1
+        return self.edad
 
     def numeros_rojos(self, importe):
-        if self.saldo < 0 or (self.saldo - importe) < 0:
-            return True
-        else:
-            return False
+        return (self.saldo < 0 or (self.saldo - importe) < 0)
 
     def transferencia(self, persona2, importe):
         if not self.numeros_rojos(importe):
             self.saldo = self.saldo - importe
             persona2.saldo = persona2.saldo + importe
+            return f"Transferencia de {importe} Realizada"
+        else:
+            return f"Transferencia de {importe} NO realizada, cuenta en NUMEROS ROJOS "
 
 
 Persona1 = Persona("Pepe", 25, 100)
@@ -78,10 +81,7 @@ importe = 10
 print(Persona1)
 print(Persona2)
 
-Persona1.transferencia(Persona2, importe)
-
-print(f"Transferencia de {importe} realizada ")
+print(Persona1.transferencia(Persona2, importe))
 
 print(Persona1)
 print(Persona2)
-
