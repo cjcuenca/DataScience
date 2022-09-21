@@ -41,15 +41,13 @@ class NumeroComplejo():
         self.x = x 
         self.y = y 
     
-    def imprimir(self):
-        return f"({self.x},{self.y})"
+    # def imprimir(self):
+    #     return f"({self.x},{self.y})"
 
     def __str__(self):
         return  f"({self.x},{self.y})"
 
-numerocomplejo1 = NumeroComplejo(3,5)
-
-#print(numerocomplejo1)
+# print(NumeroComplejo(3,5))
 
 
 # EJERCICIO 4
@@ -63,28 +61,20 @@ class NumeroComplejo():
     def __init__(self,x,y):
         self.x = x 
         self.y = y 
-    
-    def imprimir(self):
-        return f"({self.x},{self.y})"
 
     def __str__(self):
         return  f"({self.x},{self.y})"
 
     def numeros_complejos_iguales(self,numero):
-        if (self.x) == numero.x and (self.y == numero.y) :
-            numeros_complejos_iguales = True
-            return numeros_complejos_iguales
-        else:
-            numeros_complejos_iguales = False
-            return numeros_complejos_iguales
+        return self.x == numero.x and self.y == numero.y 
 
-numerocomplejo1 = NumeroComplejo(3,5)
-numerocomplejo2 = NumeroComplejo(3,4)
+# numerocomplejo1 = NumeroComplejo(3,4)
+# numerocomplejo2 = NumeroComplejo(3,4)
 
-#if numerocomplejo1.numeros_complejos_iguales(numerocomplejo2):
-#    print("Son iguales")
-#else:
-#    print("NO son iguales")
+# if numerocomplejo1.numeros_complejos_iguales(numerocomplejo2):
+#    print(f"({numerocomplejo1.x},{numerocomplejo1.y}) y ({numerocomplejo2.x},{numerocomplejo2.y}) son iguales")
+# else:
+#    print(f"({numerocomplejo1.x},{numerocomplejo1.y}) y ({numerocomplejo2.x},{numerocomplejo2.y}) NO Son iguales")
 
 # EJERCICIO 5
 
@@ -97,24 +87,20 @@ class NumeroComplejo():
     def __init__(self,x,y):
         self.x = x 
         self.y = y 
-    
-    def imprimir(self):
-        return f"({self.x},{self.y})"
 
     def __str__(self):
         return  f"({self.x},{self.y})"
 
-    def suma_numeros_complejos(self,numero,suma):
-        suma.x=self.x+numero.x
-        suma.y=self.y+numero.y
-        return suma
+    def suma_numeros_complejos(self,numero):
+        suma_numeros_complejos.x=self.x+numero.x
+        suma_numeros_complejos.y=self.y+numero.y
+        return suma_numeros_complejos
 
 numerocomplejo1 = NumeroComplejo(3,5)
 numerocomplejo2 = NumeroComplejo(3,4)
 
-suma = NumeroComplejo(0,0)
+suma_numeros_complejos = NumeroComplejo(0,0)
 
-numerocomplejo1.suma_numeros_complejos(numerocomplejo2, suma)
+suma_numeros_complejos = numerocomplejo1.suma_numeros_complejos(numerocomplejo2)
 
-print(suma)
-
+print(suma_numeros_complejos)

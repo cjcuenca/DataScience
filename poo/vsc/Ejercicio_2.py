@@ -129,54 +129,77 @@ class Cuenta(Persona):
 """
 class Cuenta_Joven(Cuenta):
     def __init__(self, titular, edad, saldo=0, bonificacion=0):
-        super().__init__(titular, saldo)
+#        super().__init__(titular, saldo)
+        self.titular = titular
+        self.saldo = saldo
+
         self.bonificacion = bonificacion
         self.edad = edad
 
     def esTitularValido(self):
-        if self.esMayorDeEdad() and self.edad < 25:
-            esTitularValido = True
-            return esTitularValido
-        else:
-            esTitularValido = False
-            return esTitularValido
+        return self.edad < 25 and self.esMayorDeEdad()
+#        if self.esMayorDeEdad() and self.edad < 25:
+#            esTitularValido = True
+#            return esTitularValido
+#        else:
+#            esTitularValido = False
+#            return esTitularValido
 
     def mostrar(self):
         return f"Cuenta Joven Titular {self.titular}, cantidad: {self.saldo}, edad {self.edad}  y bonificación {self.bonificacion} "
 
-    def retirar(self, cantidad):
+    # def retirar(self, cantidad):
+    #     if not self.esTitularValido():
+    #         print("No puedes retirar el importe")
+    #     elif cantidad > 0:
+    #         super().retirar(cantidad)
+
+    def retirar_cuentajoven(self, importe):
         if not self.esTitularValido():
             print("No puedes retirar el importe")
-        elif cantidad > 0:
-            super().retirar(cantidad)
+        elif importe > 0:
+            self.retirar(importe)
+            print(f"Restirando efectivo {importe} ")
+
 
 titular2 = Cuenta_Joven("Pedro", 30)
 titular3 = Cuenta_Joven("Lorena", 20, 200, 5)
 
-print(titular2.mostrar())
+#print(titular3.mostrar())
 
 
 # 1) Mayor de edad
 
+
+
 #persona1 = Persona("Carlos", 19, "50000000A")
-#if persona1.esMayorDeEdad:
-#    print("Es mayor de edad")
-#else:
-#    print("NO Es mayor de edad")
+# if titular3.esMayorDeEdad:
+#     print("Es mayor de edad")
+# else:
+#     print("NO Es mayor de edad")
 
 
 # 2) Menor de edad
+# titular4 = Cuenta_Joven("Lorena", 16, 200, 5)
 
-#persona3 = Persona("Ana", 17, "50000000A")
-#if persona3.esMayorDeEdad():
-#    print("Es mayor de edad")
-#else:
-#    print("NO Es mayor de edad")
+# if titular4.esMayorDeEdad():
+#     print("Es mayor de edad")
+# else:
+#     print("NO Es mayor de edad")
 
 # Comprobar si el  cliente  es un titular válido para la Cuenta Joven
 
-#if Cuenta_Joven.esTitularValido(persona3):
+titular4 = Cuenta_Joven("Jaume", 24, 100, 5)
+
+# if titular4.esTitularValido():
 #    print("Es un titular válido")
-#else:
+# else:
 #    print("NO ss un titular válido")
 
+#operacion de ingresar y retirar en cuenta joven
+print(titular4.mostrar())
+titular4.retirar_cuentajoven(10)
+print(titular4.mostrar())
+
+titular4.ingresar(20)
+print(titular4.mostrar())
