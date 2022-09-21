@@ -124,9 +124,15 @@ class Cuenta(Persona):
 """
 class Cuenta_Joven(Cuenta):
     def __init__(self, titular, edad, saldo=0, bonificacion=0):
+# OPCION 1 Usando super() para heredar los atributos de la clase padre (Cuenta)
 #        super().__init__(titular, saldo)
-        self.titular = titular
-        self.saldo = saldo
+
+#OPCION 2 llamando al constructor de la clase padre (Cuenta) especificandola:
+        Cuenta.__init__(self, titular, saldo)
+
+#OPCION 3 especificando los titulares y saldo:        
+        # self.titular = titular
+        # self.saldo = saldo
 
         self.bonificacion = bonificacion
         self.edad = edad
@@ -184,10 +190,10 @@ titular4 = Cuenta_Joven("Jaume", 24, 100, 5)
 
 # Comprobar si el  cliente  es un titular válido para la Cuenta Joven
 
-# if titular4.esTitularValido():
-#    print("Es un titular válido")
-# else:
-#    print("NO ss un titular válido")
+if titular4.esTitularValido():
+   print("Es un titular válido")
+else:
+   print("NO ss un titular válido")
 
 #operacion de ingresar y retirar en cuenta joven
 print(titular4.mostrar())
