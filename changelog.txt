@@ -2,13 +2,6 @@ Release Version 1.0.0    22/09/2022    cjcuenca@gmail.com
 
     - Nuevas funcionalidades:
         * Añadida la parte de ejercicios de Python Orientado a Objetos
-
-    - Bug fixes:
-        *
-
-Release Version 0.9.0    22/09/2022    cjcuenca@gmail.com
-
-    - Nuevas funcionalidades:
         * Añadida la parte de ejercicios de Python básico
 
     - Bug fixes:
